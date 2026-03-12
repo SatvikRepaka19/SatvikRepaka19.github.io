@@ -1,0 +1,162 @@
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:   #1a1a2e;
+  --accent: #0f3460;
+  --gold:   #e94560;
+  --light:  #f5f5f5;
+  --text:   #333;
+  --muted:  #666;
+  --radius: 10px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--light);
+  line-height: 1.7;
+}
+
+/* ── Nav ── */
+nav {
+  background: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo { color: #fff; font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; }
+nav ul { list-style: none; display: flex; gap: 1.5rem; }
+nav a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+nav a:hover, nav a.active { color: var(--gold); }
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy), var(--accent));
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+}
+.hero-content { max-width: 600px; margin: auto; }
+.profile-img {
+  width: 140px; height: 140px;
+  border-radius: 50%;
+  border: 4px solid var(--gold);
+  object-fit: cover;
+  margin-bottom: 1.2rem;
+}
+.hero h1 { font-size: 2.2rem; margin-bottom: 0.4rem; }
+
+/* ── Page Hero ── */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy), var(--accent));
+  color: #fff; text-align: center;
+  padding: 3rem 1.5rem 2rem;
+}
+.page-hero h1 { font-size: 2rem; margin-bottom: 0.4rem; }
+
+.tagline { color: rgba(255,255,255,0.75); font-size: 1.05rem; }
+
+/* ── Container ── */
+.container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Banner Image ── */
+.banner-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+/* ── Cards ── */
+.intro-card, .card, .contact-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.intro-card p, .card p { margin-bottom: 0.9rem; }
+.intro-card p:last-child, .card p:last-child { margin-bottom: 0; }
+
+/* ── Section & Card Headings ── */
+/* h2 = section titles (larger) */
+section > h2, .interests h2 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  border-left: 4px solid var(--gold);
+  padding-left: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+/* h3 = subheadings inside sections (smaller than h1, smaller than h2) */
+section > h3, .intro-card h3, .contact-card h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  border-left: 4px solid var(--gold);
+  padding-left: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ── Card Header ── */
+.card-header {
+  display: flex; flex-wrap: wrap;
+  align-items: center; gap: 0.5rem 1rem;
+  margin-bottom: 0.8rem;
+}
+.card-header h3 {
+  font-size: 1.05rem; color: var(--navy);
+  border: none; padding: 0; margin: 0;
+}
+.badge {
+  background: #eef2ff; color: var(--accent);
+  font-size: 0.78rem; padding: 0.2rem 0.6rem;
+  border-radius: 20px; font-weight: 600;
+}
+.date { font-size: 0.82rem; color: var(--muted); margin-left: auto; }
+
+/* ── Lists inside cards ── */
+.card ul { padding-left: 1.3rem; }
+.card ul li { margin-bottom: 0.45rem; }
+
+/* ── Interests Grid ── */
+.interest-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.interest-item {
+  background: var(--navy); color: #fff;
+  padding: 0.5rem 1.1rem;
+  border-radius: 25px; font-size: 0.9rem; font-weight: 500;
+}
+
+/* ── Contact ── */
+.contact-card h2, .contact-card h3 { margin-bottom: 0.6rem; }
+.contact-card p { margin-bottom: 0.9rem; color: var(--muted); }
+.contact-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.contact-list a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.contact-list a:hover { text-decoration: underline; }
+
+/* ── Footer ── */
+footer {
+  text-align: center; padding: 1.5rem;
+  background: var(--navy); color: rgba(255,255,255,0.5); font-size: 0.85rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.7rem; }
+  .card-header { flex-direction: column; align-items: flex-start; }
+  .date { margin-left: 0; }
+}
